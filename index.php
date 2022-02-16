@@ -7,8 +7,25 @@
     <title>Lottokone</title>
 </head>
 <body>
+    <h1>Lottokone</h1>
+    <form action="">
+        <input type="number">
+        <input type="number">
+        <input type="number">
+        <input type="number">
+        <input type="number">
+        <input type="number">
+        <input type="submit">
+    </form>
     <?php 
-        
+        $numerot = $_POST;
+
+        if ($numerot < 0 and $numerot > 31) {
+            // tähän lottokone
+        } else {
+            include 'info.php';
+        }
+
     ?>
 </body>
 </html>
