@@ -8,22 +8,29 @@
 </head>
 <body>
     <h1>Lottokone</h1>
-    <form action="">
-        <input type="number">
-        <input type="number">
-        <input type="number">
-        <input type="number">
-        <input type="number">
-        <input type="number">
-        <input type="submit">
+    <form action="index.php" method="POST">
+        <input type="number" name="first">
+        <input type="number" name="second">
+        <input type="number" name="third">
+        <input type="number" name="fourth">
+        <input type="number" name="fifth">
+        <input type="number" name="sixth">
+        <input id="nappi" type="submit">
     </form>
-    <?php 
-        $numerot = $_POST;
+    <?php
+        //ohjelma arpoo
+        
 
-        if ($numerot < 0 and $numerot > 31) {
-            // tähän lottokone
-        } else {
+        //käyttäjä arvaa
+        if (empty($_POST[1 or 2 or 3 or 4 or 5 or 6])) {
             include 'info.php';
+        } else {
+            if ($_POST[1 or 2 or 3 or 4 or 5 or 6] >= 1 and $_POST[1 or 2 or 3 or 4 or 5 or 6] <= 30) {
+               echo "hei"; 
+            }
+            else{
+                include 'info.php';
+            }
         }
 
     ?>
