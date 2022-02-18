@@ -5,6 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lottokone</title>
+    <style>
+        body{
+            background-color: 
+            <?php
+                if ($_POST == $numbers) {
+                    // tähän animaatio, jos pelaaja voittaa!!!
+                }
+            ?>
+            ;
+        }
+
+    </style>
 </head>
 <body>
     <h1>Lottokone</h1>
@@ -42,11 +54,15 @@
                 foreach ($numbers as $key => $value) {
                     # code...
                 }
+                if ($_POST == $numbers) {
+                    echo "Mahtavaaaaa!!! Arvasit oikein!!!";
+                } else {
+                    echo "Voi ei!!! Arvauksesi meni väärin!!!";
+                }
             } else {
                 include 'info.php';
             }
         }
-
     ?>
 </body>
 </html>
