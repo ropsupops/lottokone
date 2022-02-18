@@ -31,12 +31,12 @@
     </form>
     <?php
         //käyttäjä arvaa
-        if (empty($_POST[1 or 2 or 3 or 4 or 5 or 6])) {
+        if (empty ($_POST["first"] or $_POST["second"] or $_POST["third"] or $_POST["fourth"] or $_POST["fifth"] or $_POST["sixth"])) {
             include 'info.php';
         } else {
-            if ($_POST[1 or 2 or 3 or 4 or 5 or 6] >= 1 and $_POST[1 or 2 or 3 or 4 or 5 or 6] <= 30) {
+            if (($_POST["first"] or $_POST["second"] or $_POST["third"] or $_POST["fourth"] or $_POST["fifth"] or $_POST["sixth"] >= 1) and ($_POST["first"] or $_POST["second"] or $_POST["third"] or $_POST["fourth"] or $_POST["fifth"] or $_POST["sixth"] <= 30)) {
                 //ohjelma arpoo
-                $numbers=array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30);
+                $numbers = array (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30);
         
                 /*
             
