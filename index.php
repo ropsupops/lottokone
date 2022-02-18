@@ -32,7 +32,7 @@
     <?php
         //käyttäjä arvaa
         if (empty ($_POST["first"] or $_POST["second"] or $_POST["third"] or $_POST["fourth"] or $_POST["fifth"] or $_POST["sixth"])) {
-            include 'info.php';
+            echo "Täytithän kentät!!!";
         } else {
             if (($_POST["first"] or $_POST["second"] or $_POST["third"] or $_POST["fourth"] or $_POST["fifth"] or $_POST["sixth"] >= 1) and ($_POST["first"] or $_POST["second"] or $_POST["third"] or $_POST["fourth"] or $_POST["fifth"] or $_POST["sixth"] <= 30)) {
                 //ohjelma arpoo
@@ -55,12 +55,12 @@
                     # code...
                 }
                 if ($_POST == $numbers) {
-                    echo "Mahtavaaaaa!!! Arvasit oikein!!!";
+                    echo "Mahtavaa arvasit oikein!!!";
                 } else {
                     echo "Voi ei!!! Arvauksesi meni väärin!!!";
                 }
             } else {
-                include 'info.php';
+                echo "Numeroiden pitää olla 1-30 välillä!!!";
             }
         }
     ?>
