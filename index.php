@@ -35,29 +35,35 @@
             echo "Täytithän kentät!!!";
         } else {
             if (($_POST["first"] or $_POST["second"] or $_POST["third"] or $_POST["fourth"] or $_POST["fifth"] or $_POST["sixth"] >= 1) and ($_POST["first"] or $_POST["second"] or $_POST["third"] or $_POST["fourth"] or $_POST["fifth"] or $_POST["sixth"] <= 30)) {
-                //ohjelma arpoo
-                $numbers = array (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30);
-        
-                /*
-            
-                array(
-                    $num1 = (array_rand($numbers, 1)),
-                    $num2 = (array_rand($numbers, 1)),
-                    $num3 = (array_rand($numbers, 1)),
-                    $num4 = (array_rand($numbers, 1)),
-                    $num5 = (array_rand($numbers, 1)),
-                    $num6 = (array_rand($numbers, 1)),
-                );
-
-                */
-
-                foreach ($numbers as $key => $value) {
-                    # code...
-                }
-                if ($_POST == $numbers) {
-                    echo "Mahtavaa arvasit oikein!!!";
+                if () {
+                    echo "Et saa laittaa kahta samaa numeroa!!";
                 } else {
-                    echo "Voi ei!!! Arvauksesi meni väärin!!!";
+                    //ohjelma arpoo
+                    $numbers = array (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30);
+            
+                    /*
+                
+                    array(
+                        $num1 = (array_rand($numbers, 1)),
+                        $num2 = (array_rand($numbers, 1)),
+                        $num3 = (array_rand($numbers, 1)),
+                        $num4 = (array_rand($numbers, 1)),
+                        $num5 = (array_rand($numbers, 1)),
+                        $num6 = (array_rand($numbers, 1)),
+                    );
+
+                    */
+
+                    in_array(...);
+
+                    foreach ($numbers as $key => $value) {
+                        # code...
+                    }
+                    if ($_POST == $numbers) {
+                        echo "Mahtavaa arvasit oikein!!!";
+                    } else {
+                        echo "Voi ei!!! Arvauksesi meni väärin!!!";
+                    }
                 }
             } else {
                 echo "Numeroiden pitää olla 1-30 välillä!!!";
