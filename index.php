@@ -9,7 +9,7 @@
         body{
             background-color: 
             <?php
-                if ($_POST == $numbers) {
+                if ($_POST["first"] == $num1 and $_POST["second"] == $num2 and $_POST["third"] == $num3 and $_POST["fourth"] == $num4 and $_POST["fifth"] == $num5 and $_POST["sixth"] == $num6) {
                     // tähän animaatio, jos pelaaja voittaa!!!
                 }
             ?>
@@ -35,9 +35,7 @@
             echo "Täytithän kentät!!!";
         } else {
             if (($_POST["first"] or $_POST["second"] or $_POST["third"] or $_POST["fourth"] or $_POST["fifth"] or $_POST["sixth"] >= 1) and ($_POST["first"] or $_POST["second"] or $_POST["third"] or $_POST["fourth"] or $_POST["fifth"] or $_POST["sixth"] <= 30)) {
-                if () {
-                    echo "Et saa laittaa kahta samaa numeroa!!";
-                } else {
+                if (in_array(...)) {
                     //ohjelma arpoo
                     $numbers = array (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30);
             
@@ -54,16 +52,16 @@
 
                     */
 
-                    in_array(...);
-
                     foreach ($numbers as $key => $value) {
                         # code...
                     }
-                    if ($_POST == $numbers) {
+                    if ($_POST["first"] == $num1 and $_POST["second"] == $num2 and $_POST["third"] == $num3 and $_POST["fourth"] == $num4 and $_POST["fifth"] == $num5 and $_POST["sixth"] == $num6) {
                         echo "Mahtavaa arvasit oikein!!!";
                     } else {
                         echo "Voi ei!!! Arvauksesi meni väärin!!!";
                     }
+                } else {
+                    echo "Et saa laittaa kahta samaa numeroa!!";
                 }
             } else {
                 echo "Numeroiden pitää olla 1-30 välillä!!!";
