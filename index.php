@@ -41,23 +41,27 @@
                             if (in_array(...)) {
                                 //ohjelma arpoo
                                 $numbers = array (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30);
-                        
-                                /*
                             
                                 array(
-                                    $num1 = (array_rand($numbers, 1)),
-                                    $num2 = (array_rand($numbers, 1)),
-                                    $num3 = (array_rand($numbers, 1)),
-                                    $num4 = (array_rand($numbers, 1)),
-                                    $num5 = (array_rand($numbers, 1)),
-                                    $num6 = (array_rand($numbers, 1)),
+                                    $num1 = (array_rand($numbers, 1)), 
+                                    // arvo satunnainen numero
+                                    $num2 = (array_rand($numbers, 1)), 
+                                    // arvo satunnainen numero, mutta ei $num1
+                                    $num3 = (array_rand($numbers, 1)), 
+                                    // arvo satunnainen numero, mutta ei $num1 tai num2
+                                    $num4 = (array_rand($numbers, 1)), 
+                                    // arvo satunnainen numero, mutta ei $num1, $num2 tai $num3
+                                    $num5 = (array_rand($numbers, 1)), 
+                                    // arvo satunnainen numero, mutta ei $num1, $num2, $num tai $num4
+                                    $num6 = (array_rand($numbers, 1)), 
+                                    // arvo satunnainen numero, mutta ei $num1, $num2, $num3, $num4 tai $num5
                                 );
 
-                                */
+                                //testausta varten!!
 
-                                foreach ($numbers as $key => $value) {
-                                    # code...
-                                }
+                                echo "$num1 <br> . $num2 <br> . $num3 <br> . $num4 <br> . $num5 <br> . $num6";
+
+
                                 if ($_POST["first"] == $num1 and $_POST["second"] == $num2 and $_POST["third"] == $num3 and $_POST["fourth"] == $num4 and $_POST["fifth"] == $num5 and $_POST["sixth"] == $num6) {
                                     echo "Mahtavaa arvasit oikein!!!";
                                 } else {
