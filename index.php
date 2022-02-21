@@ -38,31 +38,24 @@
                         echo "Täytithän kentät!!!";
                     } else {
                         if (($_POST["first"] or $_POST["second"] or $_POST["third"] or $_POST["fourth"] or $_POST["fifth"] or $_POST["sixth"] >= 1) and ($_POST["first"] or $_POST["second"] or $_POST["third"] or $_POST["fourth"] or $_POST["fifth"] or $_POST["sixth"] <= 30)) {
-                            if (in_array(...)) {
+                            if ($x=5) {
                                 //ohjelma arpoo
                                 $numbers = array (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30);
                             
-                                array(
-                                    $num1 = (array_rand($numbers, 1)), 
-                                    // arvo satunnainen numero
-                                    $num2 = in_array(array_rand($numbers, 1) , $num1), 
-                                    // arvo satunnainen numero, mutta ei $num1
-                                    $num3 = in_array(array_rand($numbers, 1) , $num1, $num2), 
-                                    // arvo satunnainen numero, mutta ei $num1 tai num2
-                                    $num4 = in_array(array_rand($numbers, 1) , $num1, $num2, $num3),
-                                    // arvo satunnainen numero, mutta ei $num1, $num2 tai $num3
-                                    $num5 = in_array(array_rand($numbers, 1) , $num1, $num2, $num3, $num4),
-                                    // arvo satunnainen numero, mutta ei $num1, $num2, $num tai $num4
-                                    $num6 = in_array(array_rand($numbers, 1) , $num1, $num2, $num3, $num4, $num5)
-                                    // arvo satunnainen numero, mutta ei $num1, $num2, $num3, $num4 tai $num5
+                                $chosenNumber = array (
+                                    "num1" => array_rand($numbers, 1),
+                                    "num2" => array_rand($numbers, 1) , $chosenNumber["num1"],
+                                    /*
+                                    "num3 = array_rand($numbers, 1) , $chosenNumber[0 and 1]",
+                                    "num4 = array_rand($numbers, 1) , $chosenNumber[0 and 1 and 2]",
+                                    "num5 = array_rand($numbers, 1) , $chosenNumber[0 and 1 and 2 and 3]",
+                                    "num6 = array_rand($numbers, 1) , $chosenNumber[0 and 1 and 2 and 3 and 4]"*/
                                 );
 
                                 //testausta varten!!
+                                echo $chosenNumber["num1"] . "<br>" . $chosenNumber["num2"]; //. $chosenNumber["num3"] . $chosenNumber["num4"] . $chosenNumber["num5"] . $chosenNumber["num6"];
 
-                                echo "$num1 <br> . $num2 <br> . $num3 <br> . $num4 <br> . $num5 <br> . $num6";
-
-
-                                if ($_POST["first"] == $num1 and $_POST["second"] == $num2 and $_POST["third"] == $num3 and $_POST["fourth"] == $num4 and $_POST["fifth"] == $num5 and $_POST["sixth"] == $num6) {
+                                if ($_POST["first"] == $chosenNumber["num1"] and $_POST["second"] == $chosenNumber["num2"] and $_POST["third"] == $chosenNumber["num3"] and $_POST["fourth"] == $chosenNumber["num4"] and $_POST["fifth"] == $chosenNumber["num5"] and $_POST["sixth"] == $chosenNumber["num6"]) {
                                     echo "Mahtavaa arvasit oikein!!!";
                                 } else {
                                     echo "Voi ei!!! Arvauksesi meni väärin!!!";
