@@ -8,10 +8,8 @@
     <style>
         body{
             background-color: 
-            <?php
-                if ($_POST["first"] == $num1 and $_POST["second"] == $num2 and $_POST["third"] == $num3 and $_POST["fourth"] == $num4 and $_POST["fifth"] == $num5 and $_POST["sixth"] == $num6) {
-                    // tähän animaatio, jos pelaaja voittaa!!!
-                }
+            <?php                    
+                // tähän animaatio, jos pelaaja voittaa!!!
             ?>
             ;
         }
@@ -45,15 +43,14 @@
                                 $chosenNumber = array (
                                     "num1" => array_rand($numbers, 1),
                                     "num2" => array_rand($numbers, 1) , $chosenNumber["num1"],
-                                    /*
-                                    "num3 = array_rand($numbers, 1) , $chosenNumber[0 and 1]",
-                                    "num4 = array_rand($numbers, 1) , $chosenNumber[0 and 1 and 2]",
-                                    "num5 = array_rand($numbers, 1) , $chosenNumber[0 and 1 and 2 and 3]",
-                                    "num6 = array_rand($numbers, 1) , $chosenNumber[0 and 1 and 2 and 3 and 4]"*/
+                                    "num3" => array_rand($numbers, 1) , $chosenNumber["num1" and "num2"],
+                                    "num4" => array_rand($numbers, 1) , $chosenNumber["num1" and "num2" and "num1"],
+                                    "num5" => array_rand($numbers, 1) , $chosenNumber["num1" and "num2" and "num3" and "num4"],
+                                    "num6" => array_rand($numbers, 1) , $chosenNumber["num1" and "num2" and "num3" and "num4" and "num5"]
                                 );
 
                                 //testausta varten!!
-                                echo $chosenNumber["num1"] . "<br>" . $chosenNumber["num2"]; //. $chosenNumber["num3"] . $chosenNumber["num4"] . $chosenNumber["num5"] . $chosenNumber["num6"];
+                                echo $chosenNumber["num1"] . "<br>" . $chosenNumber["num2"] . $chosenNumber["num3"] . $chosenNumber["num4"] . $chosenNumber["num5"] . $chosenNumber["num6"];
 
                                 if ($_POST["first"] == $chosenNumber["num1"] and $_POST["second"] == $chosenNumber["num2"] and $_POST["third"] == $chosenNumber["num3"] and $_POST["fourth"] == $chosenNumber["num4"] and $_POST["fifth"] == $chosenNumber["num5"] and $_POST["sixth"] == $chosenNumber["num6"]) {
                                     echo "Mahtavaa arvasit oikein!!!";
