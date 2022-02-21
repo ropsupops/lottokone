@@ -45,15 +45,15 @@
                                 array(
                                     $num1 = (array_rand($numbers, 1)), 
                                     // arvo satunnainen numero
-                                    $num2 = (array_rand($numbers, 1)), 
+                                    $num2 = in_array(array_rand($numbers, 1) , $num1), 
                                     // arvo satunnainen numero, mutta ei $num1
-                                    $num3 = (array_rand($numbers, 1)), 
+                                    $num3 = in_array(array_rand($numbers, 1) , $num1, $num2), 
                                     // arvo satunnainen numero, mutta ei $num1 tai num2
-                                    $num4 = (array_rand($numbers, 1)), 
+                                    $num4 = in_array(array_rand($numbers, 1) , $num1, $num2, $num3),
                                     // arvo satunnainen numero, mutta ei $num1, $num2 tai $num3
-                                    $num5 = (array_rand($numbers, 1)), 
+                                    $num5 = in_array(array_rand($numbers, 1) , $num1, $num2, $num3, $num4),
                                     // arvo satunnainen numero, mutta ei $num1, $num2, $num tai $num4
-                                    $num6 = (array_rand($numbers, 1)), 
+                                    $num6 = in_array(array_rand($numbers, 1) , $num1, $num2, $num3, $num4, $num5)
                                     // arvo satunnainen numero, mutta ei $num1, $num2, $num3, $num4 tai $num5
                                 );
 
