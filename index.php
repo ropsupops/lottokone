@@ -35,30 +35,32 @@
                     if (empty ($_POST["first"] or $_POST["second"] or $_POST["third"] or $_POST["fourth"] or $_POST["fifth"] or $_POST["sixth"])) {
                         echo "Täytithän kentät!!!";
                     } else {
-                        if (($_POST["first"] or $_POST["second"] or $_POST["third"] or $_POST["fourth"] or $_POST["fifth"] or $_POST["sixth"] >= 1) and ($_POST["first"] or $_POST["second"] or $_POST["third"] or $_POST["fourth"] or $_POST["fifth"] or $_POST["sixth"] <= 30)) {
-                            if ($x=5) {
-                                //ohjelma arpoo
-                                $numbers = array (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30);
-                            
-                                $chosenNumber = array (
-                                    "num1" => array_rand($numbers, 1),
-                                    "num2" => array_rand($numbers, 1) , $chosenNumber["num1"],
-                                    "num3" => array_rand($numbers, 1) , $chosenNumber["num1" and "num2"],
-                                    "num4" => array_rand($numbers, 1) , $chosenNumber["num1" and "num2" and "num1"],
-                                    "num5" => array_rand($numbers, 1) , $chosenNumber["num1" and "num2" and "num3" and "num4"],
-                                    "num6" => array_rand($numbers, 1) , $chosenNumber["num1" and "num2" and "num3" and "num4" and "num5"]
-                                );
-
-                                //testausta varten!!
-                                echo $chosenNumber["num1"] . "<br>" . $chosenNumber["num2"] . $chosenNumber["num3"] . $chosenNumber["num4"] . $chosenNumber["num5"] . $chosenNumber["num6"];
-
-                                if ($_POST["first"] == $chosenNumber["num1"] and $_POST["second"] == $chosenNumber["num2"] and $_POST["third"] == $chosenNumber["num3"] and $_POST["fourth"] == $chosenNumber["num4"] and $_POST["fifth"] == $chosenNumber["num5"] and $_POST["sixth"] == $chosenNumber["num6"]) {
-                                    echo "Mahtavaa arvasit oikein!!!";
+                        if (1 <= $_POST) {
+                            if ($_POST["first"] <= 30 and $_POST["second"] <= 30 and $_POST["third"] <= 30 and $_POST["fourth"] <= 30 and $_POST["fifth"] <= 30 and $_POST["sixth"] <= 30) {
+                                if ($x=5) { //tämä on vain placeholder
+                                    //ohjelma arpoo
+                                    $numbers = array (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30);
+                                    
+                                    $counter=0;
+                                    do {
+                                        $generatedNumbers["$counter"] = array_rand($numbers, 1);
+                                        $counter++;
+                                    } while ($counter < 6 and !in_array($counter, $generatedNumbers));
+    
+                                    print_r($generatedNumbers);
+                                    //testausta varten!!
+                                    echo $generatedNumbers[0] . "<br>" . $generatedNumbers[1] . "<br>" . $generatedNumbers[2] . "<br>" . $generatedNumbers[3] . "<br>" . $generatedNumbers[4] . "<br>" . $generatedNumbers[5] . "<br>";
+    
+                                    if ($_POST["first"] == $generatedNumbers[0] and $_POST["second"] == $generatedNumbers[1] and $_POST["third"] == $generatedNumbers[2] and $_POST["fourth"] == $generatedNumbers[3] and $_POST["fifth"] == $generatedNumbers[4] and $_POST["sixth"] == $generatedNumbers[5]) {
+                                        echo "Mahtavaa arvasit oikein!!!";
+                                    } else {
+                                        echo "Voi ei!!! Arvauksesi meni väärin!!!";
+                                    }
                                 } else {
-                                    echo "Voi ei!!! Arvauksesi meni väärin!!!";
+                                    echo "Et saa laittaa kahta samaa numeroa!!";
                                 }
                             } else {
-                                echo "Et saa laittaa kahta samaa numeroa!!";
+                                echo "Numeroiden pitää olla 1-30 välillä!!!";
                             }
                         } else {
                             echo "Numeroiden pitää olla 1-30 välillä!!!";
