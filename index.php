@@ -9,28 +9,23 @@
 </head>
 <body>
     <div class="content">
-        <h1>Lottery</h1>
+        <h1>€€€ Lottery €€€</h1>
         <form action="index.php" method="POST">
-            <input type="number" name="1" min="1" max="30" require>
-            <input type="number" name="2" min="1" max="30" require>
-            <input type="number" name="3" min="1" max="30" require>
-            <input type="number" name="4" min="1" max="30" require>
-            <input type="number" name="5" min="1" max="30" require>
-            <input type="number" name="6" min="1" max="30" require> <br>
+            <input type="number" name="1" min="1" max="30" required>
+            <input type="number" name="2" min="1" max="30" required>
+            <input type="number" name="3" min="1" max="30" required>
+            <input type="number" name="4" min="1" max="30" required>
+            <input type="number" name="5" min="1" max="30" required>
+            <input type="number" name="6" min="1" max="30" required> <br>
             <input id="button" type="submit" value="LET'S PLAY!" min="1" max="30" require>
-            <!-- Kiitos Heidille avusta (min-max & require)-->
+            <!-- Kiitos Heidille avusta (min-max & required)-->
         </form>
         <h2>
             <?php
                 if (isset($_POST["submit"])){
                     foreach ($_POST as $choice) {
-                        $counter = 1;
                         if (in_array($choice, $_POST)) {
-                            echo "EI SAA OLLA KAHTA SAMAA!!!";
-                            $counter++;
-                            // ei toimi tällä hetkellä!!!
-                        } else {
-                            $counter++;
+                            echo "NO DUPLICATES!!!";
                         }
                     }
                 }
@@ -53,6 +48,15 @@
                 }
             ?>
         </h2>
+        <div id="winner">
+            <h3>
+                <?php 
+                    if ($correct == 6) {
+                        echo "YOU HAVE WON!!! GONGRATULATIONS!!!";
+                    }
+                ?>
+            </h3>
+        </div>
         <h3>
             <?php 
                 echo "Your numbers:" . " " . $_POST["1"] . " " . $_POST["2"] . " " . $_POST["3"] . " " . $_POST["4"] . " " . $_POST["5"] . " " . $_POST["6"] . "<br>";
@@ -64,15 +68,6 @@
                 echo "You got " . $correct . " right";
             ?>
         </h2>
-    </div>
-    <div id="winner">
-        <h1>
-            <?php 
-                if ($correct == 6) {
-                    echo "YOU HAVE WON!!! GONGRATULATIONS!!!";
-                }
-            ?>
-        </h1>
     </div>
 </body>
 </html>
