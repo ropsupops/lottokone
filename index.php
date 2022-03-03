@@ -4,68 +4,75 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lottokone</title>
+    <title>Lottery</title>
     <style>
         body{
             background-color: 
             <?php                    
-                // tähän animaatio, jos pelaaja voittaa!!!
+                if ($correct == 6) {
+                    //YOU WIN!!!
+                }
             ?>
             ;
         }
 
     </style>
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
     <div class="container">
         <div class="content">
-            <h1>Lottokone</h1>
+            <h1>Lottery</h1>
             <form action="index.php" method="POST">
-                <input type="number" name="first">
-                <input type="number" name="second">
-                <input type="number" name="third">
-                <input type="number" name="fourth">
-                <input type="number" name="fifth">
-                <input type="number" name="sixth">
-                <input id="nappi" type="submit">
+                <input type="number" name="1" min="1" max="30" require>
+                <input type="number" name="2" min="1" max="30" require>
+                <input type="number" name="3" min="1" max="30" require>
+                <input type="number" name="4" min="1" max="30" require>
+                <input type="number" name="5" min="1" max="30" require>
+                <input type="number" name="6" min="1" max="30" require>
+                <input id="nappi" type="submit" min="1" max="30" require>
+                <!-- Kiitos Heidille avusta-->
             </form>
             <h2>
                 <?php
-                    //käyttäjä arvaa
-                    if (empty ($_POST["first"] or $_POST["second"] or $_POST["third"] or $_POST["fourth"] or $_POST["fifth"] or $_POST["sixth"])) {
-                        echo "Täytithän kentät!!!";
-                    } else {
-                        if (1 <= $_POST) {
-                            if ($_POST["first"] <= 30 and $_POST["second"] <= 30 and $_POST["third"] <= 30 and $_POST["fourth"] <= 30 and $_POST["fifth"] <= 30 and $_POST["sixth"] <= 30) {
-                                if ($x=5) { //tämä on vain placeholder
-                                    //ohjelma arpoo
-                                    $numbers = array (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30);
-                                    
-                                    $counter=0;
-                                    do {
-                                        $generatedNumbers["$counter"] = array_rand($numbers, 1);
-                                        $counter++;
-                                    } while ($counter < 6 and !in_array($counter, $generatedNumbers));
-    
-                                    print_r($generatedNumbers);
-                                    //testausta varten!!
-                                    echo $generatedNumbers[0] . "<br>" . $generatedNumbers[1] . "<br>" . $generatedNumbers[2] . "<br>" . $generatedNumbers[3] . "<br>" . $generatedNumbers[4] . "<br>" . $generatedNumbers[5] . "<br>";
-    
-                                    if ($_POST["first"] == $generatedNumbers[0] and $_POST["second"] == $generatedNumbers[1] and $_POST["third"] == $generatedNumbers[2] and $_POST["fourth"] == $generatedNumbers[3] and $_POST["fifth"] == $generatedNumbers[4] and $_POST["sixth"] == $generatedNumbers[5]) {
-                                        echo "Mahtavaa arvasit oikein!!!";
-                                    } else {
-                                        echo "Voi ei!!! Arvauksesi meni väärin!!!";
-                                    }
-                                } else {
-                                    echo "Et saa laittaa kahta samaa numeroa!!";
-                                }
+                    if (isset($_POST["submit"])){
+                        foreach ($_POST as $choice) {
+                            $counter = 1;
+                            if (in_array($choice, $_POST)) {
+                                echo "EI SAA OLLA KAHTA SAMAA!!!";
+                                $counter++;
+                                // ei toimi tällä hetkellä!!!
                             } else {
-                                echo "Numeroiden pitää olla 1-30 välillä!!!";
+                                $counter++;
                             }
-                        } else {
-                            echo "Numeroiden pitää olla 1-30 välillä!!!";
                         }
                     }
+                    
+                    $generatedNumbers = array();
+
+                    while (count($generatedNumbers) < 6) {
+                        $correctNumber = rand(1,30);
+                        if (!in_array($correctNumber, $generatedNumbers)) {
+                            array_push($generatedNumbers, $correctNumber);
+                        }
+                    }
+
+                    $correct = 0;
+
+                    foreach ($_POST as $number) {
+                        if (in_array($number, $generatedNumbers)) {
+                            $correct++;
+                        }
+                    }
+                    
+                    if ($correct == 6) {
+                        //YOU WIN!!!
+                    }
+
+                    echo "Your numbers:" . $_POST["1"] . $_POST["2"] . $_POST["3"] . $_POST["4"] . $_POST["5"] . $_POST["6"] . "<br>";
+                    echo "Winning numbers:" . $generatedNumbers[0] . "<br>" . $generatedNumbers[1] . "<br>" . $generatedNumbers[2] . "<br>" . $generatedNumbers[3] . "<br>" . $generatedNumbers[4] . "<br>" . $generatedNumbers[5] . "<br>";
+
+                    echo "Sait " . $correct . " oikein";
                 ?>
             </h2>
         </div>
