@@ -5,18 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lottery</title>
-    <style>
-        body{
-            background-color: 
-            <?php                    
-                if ($correct == 6) {
-                    //YOU WIN!!!
-                }
-            ?>
-            ;
-        }
-
-    </style>
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
@@ -29,7 +17,7 @@
             <input type="number" name="4" min="1" max="30" require>
             <input type="number" name="5" min="1" max="30" require>
             <input type="number" name="6" min="1" max="30" require> <br>
-            <input id="button" type="submit" value="Let's PLAY!" min="1" max="30" require>
+            <input id="button" type="submit" value="LET'S PLAY!" min="1" max="30" require>
             <!-- Kiitos Heidille avusta (min-max & require)-->
         </form>
         <h2>
@@ -74,6 +62,9 @@
                 echo "Sait " . $correct . " oikein";
             ?>
         </h2>
+    </div>
+    <div id="winner">
+        <h1>YOU HAVE WON!!! GONGRATULATIONS!!!</h1>
     </div>
 </body>
 </html>
