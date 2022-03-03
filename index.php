@@ -51,20 +51,28 @@
                         $correct++;
                     }
                 }
-                
-                if ($correct == 6) {
-                    //YOU WIN!!!
-                }
-
-                echo "Your numbers:" . $_POST["1"] . $_POST["2"] . $_POST["3"] . $_POST["4"] . $_POST["5"] . $_POST["6"] . "<br>";
-                echo "Winning numbers:" . $generatedNumbers[0] . "<br>" . $generatedNumbers[1] . "<br>" . $generatedNumbers[2] . "<br>" . $generatedNumbers[3] . "<br>" . $generatedNumbers[4] . "<br>" . $generatedNumbers[5] . "<br>";
-
-                echo "Sait " . $correct . " oikein";
+            ?>
+        </h2>
+        <h3>
+            <?php 
+                echo "Your numbers:" . " " . $_POST["1"] . " " . $_POST["2"] . " " . $_POST["3"] . " " . $_POST["4"] . " " . $_POST["5"] . " " . $_POST["6"] . "<br>";
+                echo "Winning numbers:" . " " . $generatedNumbers[0] . " " . $generatedNumbers[1] . " " . $generatedNumbers[2] . " " . $generatedNumbers[3] . " " . $generatedNumbers[4] . " " . $generatedNumbers[5] . "<br>";
+            ?>       
+        </h3>
+        <h2>
+            <?php
+                echo "You got " . $correct . " right";
             ?>
         </h2>
     </div>
     <div id="winner">
-        <h1>YOU HAVE WON!!! GONGRATULATIONS!!!</h1>
+        <h1>
+            <?php 
+                if ($correct == 6) {
+                    echo "YOU HAVE WON!!! GONGRATULATIONS!!!";
+                }
+            ?>
+        </h1>
     </div>
 </body>
 </html>
