@@ -17,7 +17,7 @@
             <input type="number" name="4" min="1" max="30" required>
             <input type="number" name="5" min="1" max="30" required>
             <input type="number" name="6" min="1" max="30" required> <br>
-            <input id="button" type="submit" value="LET'S PLAY!" min="1" max="30" require>
+            <input id="button" type="submit" value="LET'S PLAY!" require>
             <!-- Kiitos Heidille avusta (min-max & required)-->
         </form>
         <h2>
