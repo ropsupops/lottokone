@@ -24,7 +24,7 @@
             <?php
                 if (isset($_POST["submit"])){
                     foreach ($_POST as $choice) {
-                        if ($choice == $_POST) {
+                        if (in_array($choice, $_POST)) {
                             echo "NO DUPLICATES!!!";
                             // ei toimi tällä hetkellä
                         }
